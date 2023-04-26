@@ -7,11 +7,16 @@ import Movies from './components/Movies';
 import Home from './components/Home';
 import TV_series from './components/TVseries';
 import Upcoming from './components/Upcoming';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const queryClient = new QueryClient();
+
 root.render(
+  <QueryClientProvider client={queryClient}>
   <BrowserRouter>
     <Routes>
       <Route path="/">
@@ -23,4 +28,5 @@ root.render(
       </Route>
     </Routes>
   </BrowserRouter>
+  </QueryClientProvider>
 );
