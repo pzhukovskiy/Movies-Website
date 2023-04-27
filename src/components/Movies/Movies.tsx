@@ -16,7 +16,7 @@ const Movies = () => {
   return (
     <div>
       <Navbar>
-        <div style={{width: '60vw'}}>
+        <div style={{width: '55vw'}}>
           <ListMovies movies={data}/>
         </div>
       </Navbar>
