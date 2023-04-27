@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Movies from './components/Movies';
-import Home from './components/Home';
-import TV_series from './components/TVseries';
-import Upcoming from './components/Upcoming';
+import Movies from './components/Movies/Movies';
+import Home from './components/Home/Home';
+import TV_SERIES from './components/TV/TVseries';
+import Upcoming from './components/Upcoming/Upcoming';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const root = ReactDOM.createRoot(
@@ -20,10 +20,10 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/">
-        <Route index element={<Navbar children={<App/>}/>}/>  
+      <Route index element={<Home/>}/>  
           <Route path="/Home" element={<Home/>}/>
           <Route path='/Movies' element={<Movies/>}/>
-          <Route path='/TV Series' element={<TV_series/>}/>
+          <Route path='/TV Series' element={<TV_SERIES/>}/>
           <Route path='/Upcoming' element={<Upcoming/>}/>
       </Route>
     </Routes>
