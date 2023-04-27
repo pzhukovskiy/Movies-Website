@@ -58,18 +58,12 @@
     left: 100px;
 }
 
-.searchInput {
-    width: 60vw;
-    background-color: white;
-}
-
-
 .allInfo {
     display: flex;
-    flex-direction: row;
     margin: 100px 0 0 100px;
     height: 100%;
     width: 60vw;
+    background-color: rgb(48, 48, 48);
 }
 
 .right_menu {
@@ -85,22 +79,4 @@
     display: flex;
     margin: 50px 0 0 0;
     justify-content: space-evenly;
-}
-
-@media (max-width: 1720px) {
-    .searchInput {
-        width: 55vw;
-    }
-}
-
-@media (max-width: 1520px) {
-    .searchInput {
-        width: 50vw;
-    }
-}
-
-@media (max-width: 1375px) {
-    .searchInput {
-        width: 40vw;
-    }
 }

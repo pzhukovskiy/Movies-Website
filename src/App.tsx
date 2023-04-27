@@ -1,14 +1,11 @@
 import React from 'react'
-import { Home } from '@mui/icons-material'
-import Navbar from './components/Navbar/Navbar'
-
+import Navbar from './components/Navbar'
+import Home from './components/Home'
 
 const App = () => {
   return (
     <div>
-      <Navbar>
-        <Home/>
-      </Navbar>
+      <Navbar children={<Home/>}/>
     </div>
   )
 }

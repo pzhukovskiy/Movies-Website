@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from './Navbar'
 
-const TV_SERIES = () => {
+const TVseries = () => {
   return (
     <div>
       <Navbar>
@@ -11,4 +11,4 @@ const TV_SERIES = () => {
   )
 }
 
-export default TV_SERIES
+export default TVseries

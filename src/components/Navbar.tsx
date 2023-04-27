@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
-import styles from './Navbar.module.scss'
-import './Navbar.scss'
-import Logo from '../../imgs/Movies.png'
-import { pages } from '../../pages/pages'
+import styles from '../styles/Navbar.module.scss'
+import '../styles/Navbar.scss'
+import Logo from '../imgs/Movies.png'
+import { pages } from '../pages/pages'
 import { NavLink} from 'react-router-dom'
-import { NavbarProps } from '../../types/NavbarPropsType'
+import { NavbarProps } from '../types/types'
 import { Avatar, FormControl, TextField } from '@mui/material'
-import NotificationsIcon from '@mui/icons-material/Notifications'
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 const Navbar: FC<NavbarProps> = ({children}) => {
   return (
@@ -18,7 +18,7 @@ const Navbar: FC<NavbarProps> = ({children}) => {
                     {pages.map(page => (
                         <div key={page.id} className={styles.card}>
                             <img src={page.img} alt={page.id} className={styles.iconImage}/>
-                            <NavLink to={`/${page.path}`}className={({ isActive }) => (isActive ? 'link-active' : 'link')}>
+                            <NavLink to={`/${page.name}`}className={({ isActive }) => (isActive ? 'link-active' : 'link')}>
                                 <h2>{page.name}</h2>
                             </NavLink>
                         </div>
@@ -27,7 +27,7 @@ const Navbar: FC<NavbarProps> = ({children}) => {
             </div>
             <div className={styles.center}>
                 <div className={styles.search}>
-                    <FormControl className={styles.searchInput}>
+                    <FormControl sx={{width: '60vw', backgroundColor: 'white'}}>
                         <TextField id="search-field" placeholder='Search for movies, TV shows...'/>
                     </FormControl>
                 </div>
