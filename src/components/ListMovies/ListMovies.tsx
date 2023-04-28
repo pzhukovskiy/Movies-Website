@@ -20,7 +20,11 @@ const ListMovies: FC<CardHomeProps> = ({movies}) => {
                   <h3 style={{marginLeft: 5}}>{movie.vote_average.toFixed(1)}</h3>
                 </div>
               </div>
-                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} onClick={() => console.log(movie.id)}/>
+                <img 
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                  alt={movie.title} 
+                  onClick={() => console.log(movie.id)}
+                />
             </div>
         ))}
     </div>

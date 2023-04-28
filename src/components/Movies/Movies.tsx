@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import { useQuery } from 'react-query'
 import { fetchData } from '../Home/Home'
 import ListMovies from '../ListMovies/ListMovies'
+import Loading from '../Loading/Loading'
 
 const Movies = () => {
   const {data, isError, isLoading} = useQuery({
@@ -11,12 +12,12 @@ const Movies = () => {
   })
 
   if (isError) return <h1>Error</h1>
-  if(isLoading) return <h1>Loading..</h1>
+  if(isLoading) return <Loading/>
 
   return (
     <div>
       <Navbar>
-        <div style={{width: '55vw'}}>
+        <div style={{width: '60vw'}}>
           <ListMovies movies={data}/>
         </div>
       </Navbar>
