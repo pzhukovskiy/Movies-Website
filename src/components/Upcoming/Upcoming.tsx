@@ -1,9 +1,9 @@
-import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import { useQuery } from 'react-query'
-import { fetchData } from '../Home/Home'
-import Loading from '../Loading/Loading'
-import ListMovies from '../ListMovies/ListMovies'
+import React from 'react';
+import Navbar from '../Navbar/Navbar';
+import { useQuery } from 'react-query';
+import { fetchData } from '../Home/Home';
+import Loading from '../Loading/Loading';
+import ListMovies from '../ListMovies/ListMovies';
 
 
 const Upcoming = () => {

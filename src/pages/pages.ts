@@ -9,5 +9,5 @@ export const pages = [
     {id: 'Movies', name: 'Movies', img: MovieImg, path: 'Movies'},
     {id: 'TV Series', name: 'TV Series', img: TVImg, path: 'TV Series'},
     {id: 'Upcoming', name: 'Upcoming', img: CalendarImg, path: 'Upcoming'},
-    {id: 'Log out', name: 'Log out', img: LogoutImg, path: 'Main'}
+    {id: 'Log out', name: 'Log out', img: LogoutImg, path: 'Registration'}
 ]

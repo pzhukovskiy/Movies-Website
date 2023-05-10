@@ -1,9 +1,9 @@
-import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import ListMovies from '../ListMovies/ListMovies'
-import { fetchData } from '../Home/Home'
-import { useQuery } from 'react-query'
-import Loading from '../Loading/Loading'
+import React from 'react';
+import Navbar from '../Navbar/Navbar';
+import ListMovies from '../ListMovies/ListMovies';
+import { fetchData } from '../Home/Home';
+import { useQuery } from 'react-query';
+import Loading from '../Loading/Loading';
 
 const TV_SERIES = () => {
   const {data, isError, isLoading} = useQuery({

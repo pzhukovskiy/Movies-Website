@@ -1,7 +1,7 @@
 export interface CardHome {
-    id: string
+    id: string;
     title: string;
     overview: string;
-    poster_path: string;
-    vote_average: number;
+    poster_path: string;//path to image
+    vote_average: number;//rating
 }

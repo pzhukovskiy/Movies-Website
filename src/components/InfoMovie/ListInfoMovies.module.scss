@@ -1,0 +1,43 @@
+.right {
+    display: block;
+    margin: 0 0 0 25px;
+    padding: 20px 0 0 0;
+    width: 50vw;
+}
+
+.genre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #212121;
+    width: 8vw;
+}
+
+.rating {
+    display: flex;
+}
+
+.rating p {
+    padding: 0 0 0 10px;
+}
+
+.video {
+    margin: 50px 0 0 0;
+    height: 25vw;
+    width: 50vw;
+    background-color: #212121;
+    border-radius: 20px;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vw;
+    flex-direction: column;
+}
+
+.listInfo {
+    display: flex;
+}

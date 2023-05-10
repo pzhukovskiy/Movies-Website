@@ -1,6 +1,6 @@
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { List, ListItemButton, ListItemText, Collapse, ListItemIcon } from '@mui/material';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { ArrayListCategories, ArrayListGenre } from './ArrayListGenre';
 
 const ListGenre = () => {

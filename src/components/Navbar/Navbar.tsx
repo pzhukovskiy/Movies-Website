@@ -1,15 +1,32 @@
-import React, { FC } from 'react'
-import styles from './Navbar.module.scss'
-import './Navbar.scss'
-import Logo from '../../imgs/Movies.png'
-import { pages } from '../../pages/pages'
-import { NavLink} from 'react-router-dom'
-import { NavbarProps } from '../../types/NavbarPropsType'
-import { Avatar, Button, FormControl, TextField } from '@mui/material'
-import NotificationsIcon from '@mui/icons-material/Notifications'
-import ListGenre from '../ListGenre/ListGenre'
+import React, { FC, useEffect, useState } from 'react';
+import styles from './Navbar.module.scss';
+import './Navbar.scss';
+import Logo from '../../imgs/Movies.png';
+import { pages } from '../../pages/pages';
+import { NavLink} from 'react-router-dom';
+import { NavbarProps } from '../../types/NavbarPropsType';
+import { Avatar, Button, FormControl, TextField } from '@mui/material';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import ListGenre from '../ListGenre/ListGenre';
+import { getDatabase, ref, child, get } from "firebase/database";
+import { userId } from '../Registration/Registration';
+import { avatarSettings } from './AvatarSettings';
 
 const Navbar: FC<NavbarProps> = ({children}) => {
+
+    const [user, setUser] = useState({ name: '', email: '', password: '' });
+
+    useEffect(() => {
+        const dbRef = ref(getDatabase());
+        get(child(dbRef, `users/user-${userId}`)).then((snapshot) => {
+          if (snapshot.exists()) {
+            setUser(snapshot.val());
+          }
+        }).catch((error) => {
+          console.error(error);
+        });
+    }, [])
+
   return (
     <div>
         <div className={styles.main}>
@@ -43,8 +60,17 @@ const Navbar: FC<NavbarProps> = ({children}) => {
             </div>
             <div className={styles.right_menu}>
                 <div className={styles.person}>
+                    <div className={styles.avatar}>
+                        <Avatar>{user.name.slice(0,1)}</Avatar>
+                        <div className={styles.avatarContent}>
+                            {avatarSettings.map(menu => (
+                                <div key={menu.id}>
+                                    <p>{menu.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                     <NotificationsIcon sx={{fontSize: 45, color: 'white'}}/>
-                    <Avatar>H</Avatar>
                 </div>
                 <div className={styles.genre}>
                     <ListGenre/>
