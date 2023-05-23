@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import styles from './NavbarMovie.module.scss';
 import './Navbar.scss';
-import Logo from '../../imgs/Movies.png';
-import { pages } from '../../pages/pages';
+import Logo from '../../Imgs/Movies.png';
+import { pages } from '../../Pages/Pages';
 import { NavLink} from 'react-router-dom';
-import { NavbarProps } from '../../types/NavbarPropsType';
+import { NavbarProps } from '../../Types/NavbarPropsType';
 import { Button } from '@mui/material';
 
 const NavbarMovie: FC<NavbarProps> = ({children}) => {
@@ -24,8 +24,8 @@ const NavbarMovie: FC<NavbarProps> = ({children}) => {
                     ))}
                 </div>
                 <div className={styles.quizes}>
-                    <h3 style={{paddingTop: 35, color: '#E8E8E8CC', margin: 20}}>Play movie quizes and earn free tickets</h3>
-                    <h3 style={{color: '#666666', margin: 20}}>50k people are playing now</h3>
+                    <h3 className={styles.playMovie}>Play movie quizes and earn free tickets</h3>
+                    <h3 className={styles.playMovieText}>50k people are playing now</h3>
                     <Button style={{marginLeft: 20}} variant='contained'>Play</Button>
                 </div>
             </div>

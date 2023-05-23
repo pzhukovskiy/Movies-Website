@@ -7,7 +7,7 @@ import Upcoming from './components/Upcoming/Upcoming';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Registration from './components/Registration/Registration';
 import InfoMovie from './components/InfoMovie/InfoMovie';
-import TV_SERIES from './components/TV/TV_SERIES';
+import TvSeries from './components/TV/TvSeries';
 import Login from './components/Login/Login';
 
 const root = ReactDOM.createRoot(
@@ -24,7 +24,7 @@ root.render(
       <Route index element={<Registration/>}/>  
           <Route path="/Home" element={<Home/>}/>
           <Route path='/Movies' element={<Movies/>}/>
-          <Route path='/TV Series' element={<TV_SERIES/>}/>
+          <Route path='/TV Series' element={<TvSeries/>}/>
           <Route path='/Upcoming' element={<Upcoming/>}/>
           <Route path='/Registration' element={<Registration/>}/>
           <Route path='/Movie/:id' element={<InfoMovie/>}/>

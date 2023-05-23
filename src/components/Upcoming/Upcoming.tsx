@@ -1,10 +1,9 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import { useQuery } from 'react-query';
-import { fetchData } from '../Home/Home';
 import Loading from '../Loading/Loading';
 import ListMovies from '../ListMovies/ListMovies';
-
+import { fetchData } from '../api/fetchData';
 
 const Upcoming = () => {
   const {data, isError, isLoading} = useQuery({
@@ -14,6 +13,7 @@ const Upcoming = () => {
 
   if (isError) return <h1>Error</h1>
   if(isLoading) return <Loading/>
+  
   return (
     <div>
       <Navbar>

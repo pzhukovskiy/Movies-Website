@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import ListMovies from '../ListMovies/ListMovies';
-import { fetchData } from '../Home/Home';
 import { useQuery } from 'react-query';
 import Loading from '../Loading/Loading';
+import { fetchData } from '../api/fetchData';
 
-const TV_SERIES = () => {
+const TvSeries = () => {
   const {data, isError, isLoading} = useQuery({
     queryKey: ['listMovies'],
     queryFn: fetchData
@@ -13,6 +13,7 @@ const TV_SERIES = () => {
 
   if (isError) return <h1>Error</h1>
   if(isLoading) return <Loading/>
+  
   return (
     <div>
       <Navbar>
@@ -24,4 +25,4 @@ const TV_SERIES = () => {
   )
 }
 
-export default TV_SERIES
+export default TvSeries;

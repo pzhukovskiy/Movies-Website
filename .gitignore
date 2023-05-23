@@ -6,7 +6,7 @@
 .pnp.js
 
 #config database
-/src/components/database/
+/src/components/Database/
 
 # testing
 /coverage

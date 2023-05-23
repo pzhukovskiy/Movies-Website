@@ -2,7 +2,6 @@ import React from 'react';
 import { Home } from '@mui/icons-material';
 import Navbar from './components/Navbar/Navbar';
 
-
 const App = () => {
   return (
     <div>

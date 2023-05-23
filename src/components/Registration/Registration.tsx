@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import styles from './Registration.module.scss';
-import RegistrationBg from '../../imgs/RegistrationBg.png';
-import RegistrationIcon from '../../imgs/RegistrationIcon.png';
-import RegistrationImage from '../../imgs/RegistrationImage.png';
-import { Button, TextField } from '@mui/material';
+import RegistrationBg from '../../Imgs/RegistrationBg.png';
+import RegistrationIcon from '../../Imgs/RegistrationIcon.png';
+import RegistrationImage from '../../Imgs/RegistrationImage.png';
+import { Button, Input } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
-import { ref, update } from 'firebase/database';
-import { database } from '../database/firebase';
-
-export let userId: number = 0;
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../Database/firebase';
 
 const Registration = () => {
   const [name, setName] = useState('');
@@ -16,24 +14,21 @@ const Registration = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const user = {
-    name : name,
-    email: email,
-    password: password
-  } 
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (!name.length || !email.length || !password.length) {
+    if (!name || !email || !password) {
+
     } else {
-      const updates: {[key: string]: any} = {};
-      userId += 1;
-      updates[`users/user-${userId}`] = user;
-      navigate('/Home');
-      return update(ref(database), updates);
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          navigate("/Home");
+        })
+        .catch((error) => {
+          console.error(error);
+        })
     }
   };
-  
+
   return (
     <div>
       <div className={styles.all}>
@@ -56,11 +51,11 @@ const Registration = () => {
         <div className={styles.form}>
           <h1>Create an account</h1>
           <p>Let’s get started with your 30 days free trial.</p>
-          <form style={{marginTop: 25}} className={styles.field}>
-            <TextField id='name' label='Name' variant='standard' color='warning' type='text' style={{width: 300, marginBottom: 25}} value={name} onChange={(event: any) => setName(event.target.value)}/>
-            <TextField id='email' label='Email' variant='standard' color='warning' type='email' style={{width: 300, marginBottom: 25}} value={email} onChange={(event: any) => setEmail(event.target.value)}/>
-            <TextField id='password' label='Password' variant='standard' color='warning' type='password' style={{width: 300, marginBottom: 25}} value={password} onChange={(event: any) => setPassword(event.target.value)}/>
-            <Button variant='contained' type='submit' onClick={handleSubmit}>Create account</Button>
+          <form style={{marginTop: 25}} className={styles.field} onSubmit={handleSubmit}>
+            <Input placeholder='Name' type='text' style={{width: 300, marginBottom: 25}} value={name} onChange={(event: any) => setName(event.target.value)}/>
+            <Input placeholder='Email' type='email' style={{width: 300, marginBottom: 25}} value={email} onChange={(event: any) => setEmail(event.target.value)}/>
+            <Input placeholder='Password' type='password' style={{width: 300, marginBottom: 25}} value={password} onChange={(event: any) => setPassword(event.target.value)}/>
+            <Button variant='contained' type='submit'>Create account</Button>
           </form>
           <p style={{marginTop: 25}}>Already have an account ? 
           <Link to={'/Login'}>Log in</Link>

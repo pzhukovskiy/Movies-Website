@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
-import { useQuery } from 'react-query'
-import { MovieInfo } from '../../types/MovieInfo';
+import { MovieInfo } from '../../Types/MovieInfo';
 import styles from './Login.module.scss';
 
 interface LoginImageBgProps {

@@ -1,7 +1,7 @@
-import React, { FC, useEffect, useState } from "react";
-import { CardHome } from "../../types/CardHome";
+import React, { FC } from "react";
+import { CardHome } from "../../Types/CardHome";
 import styles from "./ListMovies.module.scss";
-import Star from "../../imgs/Star.png";
+import Star from "../../Imgs/Star.png";
 import { Link } from "react-router-dom";
 
 export interface CardHomeProps {

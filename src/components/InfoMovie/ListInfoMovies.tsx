@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import NavbarMovie from '../Navbar/NavbarMovie';
 import styles from './ListInfoMovies.module.scss';
-import Play from '../../imgs/PlayMovie.png';
-import Star from '../../imgs/Star.png';
-import { MovieInfo } from '../../types/MovieInfo';
+import Play from '../../Imgs/PlayMovie.png';
+import Star from '../../Imgs/Star.png';
+import { MovieInfo } from '../../Types/MovieInfo';
 
 interface ListInfoMoviesProps {
     data: MovieInfo;
