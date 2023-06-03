@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.card {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+
+.card img {
+    height: 300px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.rating {
+    color: white;
+    margin: 0 0 0 140px;
+}
+
+.block {
+    display: flex;
+    position: absolute;
+    border-radius: 0 25px;
+    width: 60px;
+    background-color: #E8E8E826;
+}
+
+@media (max-width: 1720px) {
+    .card {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width: 1520px) {
+    .card {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 1375px) {
+    .card {
+        grid-template-columns: auto;
+    }
+}
