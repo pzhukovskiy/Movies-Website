@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
+import ListMovies from '../ListMovies/ListMovies';
 import { useQuery } from 'react-query';
 import Loading from '../Loading/Loading';
-import ListMovies from '../ListMovies/ListMovies';
 import { fetchData } from '../api/fetchData';
 
-const Upcoming = () => {
+const TvSeries = () => {
   const {data, isError, isLoading} = useQuery({
     queryKey: ['listMovies'],
     queryFn: fetchData
@@ -25,4 +25,4 @@ const Upcoming = () => {
   )
 }
 
-export default Upcoming
+export default TvSeries;
