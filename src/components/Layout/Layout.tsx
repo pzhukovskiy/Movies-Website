@@ -10,7 +10,7 @@ import { NavbarProps } from "@/types/NavbarProps";
 import { List } from "../List/List";
 import ListGenre from "../ListGenre/ListGenre";
 
-const Navbar: FC<NavbarProps> = ({children}) => {
+const Layout: FC<NavbarProps> = ({children}) => {
     return (
       <div>
           <div className={styles.main}>
@@ -65,4 +65,4 @@ const Navbar: FC<NavbarProps> = ({children}) => {
     )
   }
   
-  export default Navbar
+  export default Layout

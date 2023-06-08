@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { NavbarProps } from '@/types/NavbarProps';
 import { List } from '../List/List';
 
-const NavbarMovie: FC<NavbarProps> = ({children}) => {
+const LayoutMovie: FC<NavbarProps> = ({children}) => {
   return (
     <div>
         <div className={styles.main}>
@@ -39,4 +39,4 @@ const NavbarMovie: FC<NavbarProps> = ({children}) => {
   )
 }
 
-export default NavbarMovie
+export default LayoutMovie

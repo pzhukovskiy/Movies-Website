@@ -1,9 +1,8 @@
 import { fetchDataId } from '@/api/fetchData'
-import { client } from '@/components/Client/Client'
 import Loading from '@/components/Loading/Loading'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
-import { useQuery, QueryClientProvider } from 'react-query'
+import { useQuery } from 'react-query'
 import ListInfoMovie from './ListInfoMovie'
 
 const InfoMovie = () => {

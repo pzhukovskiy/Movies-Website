@@ -3,7 +3,7 @@ import styles from './ListInfoMovie.module.scss';
 import Play from '/public/images/PlayMovie.png';
 import Star from '/public/images/Star.png';
 import { MovieInfo } from '@/types/MovieInfo';
-import NavbarMovie from '@/components/Navbar/NavbarMovie';
+import LayoutMovie from '@/components/Layout/LayoutMovie';
 import Image from 'next/image';
 
 interface ListInfoMoviesProps {
@@ -14,7 +14,7 @@ const ListInfoMovie: FC<ListInfoMoviesProps> = ({data}) => {
 
   return (
     <div>
-      <NavbarMovie>
+      <LayoutMovie>
       <Image src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} alt={data.id} width={100} height={500}/>
         <div className={styles.right}>
           <h2>Название:</h2>
@@ -41,7 +41,7 @@ const ListInfoMovie: FC<ListInfoMoviesProps> = ({data}) => {
             </div>
           </div>
         </div>
-      </NavbarMovie>
+      </LayoutMovie>
     </div>
   )
 }
